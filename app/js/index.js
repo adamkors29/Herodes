@@ -11,19 +11,25 @@ $("header img").click(function () {
     }
 });
 
-let maxQuestionCardHeight;
+if ($(window).width > 700) {
+    let maxQuestionCardHeight;
 
-for (var i = 1; i <= 10; i++) {
-    if (i % 2 == 0) {
-        if ($(`main #questions>div>div:nth-of-type(${i})`).height() > maxQuestionCardHeight)
-            $(`main #questions>div>div:nth-of-type(${i - 1})`).css("height", $(`main #questions>div>div:nth-of-type(${i})`).height());
+    for (var i = 1; i <= 10; i++) {
+        if (i % 2 == 0) {
+            if ($(`main #questions>div>div:nth-of-type(${i})`).height() > maxQuestionCardHeight)
+                $(`main #questions>div>div:nth-of-type(${i - 1})`).css("height", $(`main #questions>div>div:nth-of-type(${i})`).height());
+        }
+        else maxQuestionCardHeight = $(`main #questions>div>div:nth-of-type(${i})`).height();
+
     }
-    else maxQuestionCardHeight = $(`main #questions>div>div:nth-of-type(${i})`).height();
 
-}
-
-for (var i = 1; i <= 8; i++) {
-    $(`main #questions>div>div:nth-of-type(${i})`).css("margin-bottom", "20px");
+    for (var i = 1; i <= 8; i++) {
+        $(`main #questions>div>div:nth-of-type(${i})`).css("margin-bottom", "20px");
+    }
+} else {
+    for (var i = 1; i <= 10; i++) {
+        $(`main #questions>div>div:nth-of-type(${i})`).css("margin-bottom", "20px");
+    }
 }
 
 let piecesBiography = ['סביו של הורדוס, אנטיפטרוס, נכנע לממלכת יהודה החשמונאית, התגייר ושמר על שליטתו באדומיאה. אביו של הורדוס, אנטיפטרוס האדומי, תמך באופן פעיל בהתפשטות הרומית(שהגיעה לשיאה בכיבוש ירושלים על ידי פומפיוס בשנת 63 לפנה"ס), בתקווה להחליש את היהודים. בשנת 47 לפנה"ס קיבל הורדוס אזרחות רומית.',
@@ -40,7 +46,6 @@ let piecesBiography = ['סביו של הורדוס, אנטיפטרוס, נכנע
 ];
 let currBPiece = 0;
 let BiographyButtonWorking = false;
-$("#biography>button:last-of-type").hide();
 
 $("#biography>button:first-of-type").click(function () {
     if (!BiographyButtonWorking) {
