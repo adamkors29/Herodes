@@ -24,6 +24,7 @@ $secondBorderColor: #C1C7D0;
     direction: rtl;
     font-size: 18px;
     font-family: "Roboto", sans-serif;
+    text-decoration: none;
 
     &::selection {
         background-color: $mainColor;
@@ -330,9 +331,21 @@ main {
             }
         }
 
+        ul {
+            margin: 0 auto;
+        }
+
         @media (max-width: 550px) {
             p {
                 font-size: 16px;
+            }
+        }
+
+        a {
+            transition: color .5s ease;
+
+            &:hover {
+                color: $hoverColor;
             }
         }
     }
