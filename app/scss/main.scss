@@ -156,15 +156,14 @@ main {
 
         >div:first-of-type {
             width: 180px;
-            height: 300px;
+            aspect-ratio: 434 / 650;
             float: left;
-            background: url("https://www.juedische-allgemeine.de/wp-content/uploads/2018/10/9268-417x626-c-default.jpg") center center no-repeat;
+            background: url("https://www.gilihaskin.com/wp-content/uploads/79-800px-Statue-Augustus.jpg") center center no-repeat;
             background-size: cover;
             border-radius: 10px;
 
             @media (max-width: 650px) {
                 width: 120px;
-                height: 200px;
             }
         }
 
@@ -308,12 +307,34 @@ main {
         }
     }
 
-    >div:last-of-type {
+    >div:nth-last-of-type(2) {
         width: 95%;
         aspect-ratio: 320 / 153;
         background: url("https://static-en.parks.org.il/wp-content/uploads/2017/09/DSC_2641-e1512559977103.jpg") center center no-repeat;
         background-size: cover;
         border-radius: 10px;
+        margin-bottom: 50px;
+    }
+
+    #reaction {
+        width: 95%;
+        border: $borderColor solid 2px;
+        border-radius: 10px;
+        padding: 20px;
+
+        h2 {
+            margin-bottom: 10px;
+
+            &:last-of-type {
+                margin-top: 30px;
+            }
+        }
+
+        @media (max-width: 550px) {
+            p {
+                font-size: 16px;
+            }
+        }
     }
 }
 
