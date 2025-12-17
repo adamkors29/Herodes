@@ -11,7 +11,7 @@ $("header img").click(function () {
     }
 });
 
-if ($(window).width > 700) {
+if ($(window).width() > 700) {
     let maxQuestionCardHeight;
 
     for (var i = 1; i <= 10; i++) {
@@ -20,7 +20,6 @@ if ($(window).width > 700) {
                 $(`main #questions>div>div:nth-of-type(${i - 1})`).css("height", $(`main #questions>div>div:nth-of-type(${i})`).height());
         }
         else maxQuestionCardHeight = $(`main #questions>div>div:nth-of-type(${i})`).height();
-
     }
 
     for (var i = 1; i <= 8; i++) {
